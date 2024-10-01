@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container-tarefas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10vh;
+    width: 50vh;
+    height: 50vh;
+    background-color: blue;
+}
+
+#inputTarefas{
+    border-radius: 8px;
+    height: 8vh;
+    width: 25vh;
+    text-align: center;
+}
+
+#buttonAdd{
+    border-radius: 3px;
+    height: 8vh;
+    width: 10vh;
+    background-color: red;
+}
+
+#tarefas{
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    overflow: scroll;
+    scrollbar-width: none;
+    font-size: 50px;
+    color: aliceblue;
+    background-color: red;
+    height: 30vh;
+    width: 40vh;
+    border: 2px solid black;
+    border-radius: 5px;
+}
