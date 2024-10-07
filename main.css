@@ -42,7 +42,7 @@ body{
     height: 8vh;
     width: 25vh;
     text-align: center;
-    background-color: rgba(240, 248, 255, 0.493);
+    background-color: rgba(63, 63, 63, 0.329);
     margin-right: 2vh;
 }
 
@@ -59,6 +59,7 @@ body{
     width: 10vh;
     background-color: rgba(82, 107, 76, 0.822);
     transition: 200ms linear;
+    color: rgba(172, 172, 172, 0.664);
 }
 
 #buttonAdd:hover{
