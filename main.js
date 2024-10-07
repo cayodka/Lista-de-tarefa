@@ -5,28 +5,28 @@ const dataAtual = new Date().toISOString().split('T')[0];
 const sino1 = new Audio('./sino1.mp3');
 const sino2 = new Audio('./sino2.mp3');
 
-BotaoAdd.addEventListener('click', function() {
+function adicionarTarefa() {
     if (Input.value != '') {
         var tarefa = document.createElement('p');
+        var checkbox = document.createElement('input');
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.setAttribute("id", "checkbox");
         var buttondel = document.createElement('button');
         buttondel.innerText = 'X'; 
         buttondel.setAttribute("id", "buttondel");
-        
+
         tarefa.innerText = `${dataAtual} | ${Input.value} `;
-        tarefa.appendChild(buttondel); 
+        tarefa.prepend(checkbox); 
+        tarefa.appendChild(buttondel);
         Tarefas.appendChild(tarefa);
         Input.value = '';
 
-        let marcado = false;
-
-        tarefa.addEventListener('click', function() {
-            if (!marcado) {
+        checkbox.addEventListener('change', function() {
+            if (checkbox.checked) {
                 tarefa.style.textDecoration = 'line-through';
-                marcado = true;
                 sino1.play();
             } else {
                 tarefa.style.textDecoration = '';
-                marcado = false;
             }
         });
 
@@ -34,13 +34,31 @@ BotaoAdd.addEventListener('click', function() {
             Tarefas.removeChild(tarefa);
             sino2.play();
         });
+
+        tarefa.addEventListener('mouseenter', function() {
+            buttondel.style.visibility = 'visible';
+        });
+
+        tarefa.addEventListener('mouseleave', function() {
+            buttondel.style.visibility = 'hidden';
+        });
+
+        
+        tarefa.addEventListener('mouseenter', function() {
+            checkbox.style.visibility = 'visible';
+        });
+
+        tarefa.addEventListener('mouseleave', function() {
+            checkbox.style.visibility = 'hidden';
+        });
+        
     }
-    tarefa.addEventListener('mouseenter', function() {
-        buttondel.style.visibility = 'visible'; 
-    });
-    
-    
-    tarefa.addEventListener('mouseleave', function() {
-        buttondel.style.visibility = 'hidden'; 
-    });
+}
+
+BotaoAdd.addEventListener('click', adicionarTarefa);
+
+Input.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        adicionarTarefa();
+    }
 });
