@@ -103,6 +103,7 @@ body{
     border-radius: 3px; 
     transition: 300ms linear;
     min-width: 30px;
+    visibility: hidden;
 }
 
 #buttondel:hover{

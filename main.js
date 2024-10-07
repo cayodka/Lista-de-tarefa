@@ -35,4 +35,12 @@ BotaoAdd.addEventListener('click', function() {
             sino2.play();
         });
     }
+    tarefa.addEventListener('mouseenter', function() {
+        buttondel.style.visibility = 'visible'; 
+    });
+    
+    
+    tarefa.addEventListener('mouseleave', function() {
+        buttondel.style.visibility = 'hidden'; 
+    });
 });
